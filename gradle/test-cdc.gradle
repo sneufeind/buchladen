@@ -1,0 +1,47 @@
+apply plugin: 'groovy'
+
+sourceSets {
+    contractTest {
+        java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+            srcDir file('src/test-cdc/java')
+        }
+        resources.srcDir file('src/test-cdc/resources')
+    }
+}
+
+configurations {
+    contractTestCompile.extendsFrom testImplementation
+    contractTestRuntime.extendsFrom testRuntime
+}
+
+idea {
+    module {
+        testSourceDirs   += project.sourceSets.contractTest.java.srcDirs
+        testResourceDirs += project.sourceSets.contractTest.resources.srcDirs
+    }
+}
+
+pact {
+    broker {
+        pactBrokerUrl = 'http://localhost:8421'
+    }
+}
+
+task contractTest(type: Test) {
+    group 'verification'
+    description = 'Run consumer driven contract tests'
+
+    systemProperties System.properties
+    systemProperty 'pact.verifier.publishResults', System.getProperty('pact.verifier.publishResults', 'false')
+    systemProperty 'pact.provider.tag', System.getProperty('pact.provider.tag', 'local') // only 1 tag possible
+    systemProperty 'pact.provider.version', "${project.version.toString()}"
+    systemProperty 'pactbroker.enablePending', System.getProperty('pactbroker.enablePending', 'true')
+    systemProperty 'pactbroker.providerTags', System.getProperty('pactbroker.providerTags', System.getProperty('pact.provider.tag', 'local'))
+
+    testClassesDirs = sourceSets.contractTest.output.classesDirs
+    classpath =       sourceSets.contractTest.runtimeClasspath
+
+    useJUnitPlatform()
+}

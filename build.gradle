@@ -1,0 +1,49 @@
+buildscript {
+	ext {
+		pactVersion = '4.1.17'
+	}
+}
+plugins {
+	id 'org.springframework.boot' version '2.4.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'au.com.dius.pact' version "$pactVersion"
+	id 'java'
+	id 'idea'
+}
+apply from: 'gradle/test-cdc.gradle'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	def springDocVersion= '1.5.4'
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation "org.springdoc:springdoc-openapi-data-rest:$springDocVersion"
+	implementation "org.springdoc:springdoc-openapi-ui:$springDocVersion"
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+
+	// test consumer driven contract
+	contractTestImplementation "au.com.dius.pact.provider:junit5:$pactVersion"
+	contractTestCompileOnly 'org.projectlombok:lombok'
+}
+
+test {
+	useJUnitPlatform()
+}
