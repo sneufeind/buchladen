@@ -1,6 +1,6 @@
 package com.example.buchladen;
 
-import com.example.buchladen.adapter.db.BuchSpeichenPort;
+import com.example.buchladen.domain.port.out.BuchSpeichenPort;
 import com.example.buchladen.domain.model.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

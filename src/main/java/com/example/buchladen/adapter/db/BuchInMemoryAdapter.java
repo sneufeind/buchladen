@@ -1,7 +1,7 @@
-package com.example.buchladen.adapter.db.impl;
+package com.example.buchladen.adapter.db;
 
-import com.example.buchladen.adapter.db.BuchLadenPort;
-import com.example.buchladen.adapter.db.BuchSpeichenPort;
+import com.example.buchladen.domain.port.out.BuchLadenPort;
+import com.example.buchladen.domain.port.out.BuchSpeichenPort;
 import com.example.buchladen.domain.model.Buch;
 import com.example.buchladen.domain.model.ISBN;
 import lombok.NonNull;

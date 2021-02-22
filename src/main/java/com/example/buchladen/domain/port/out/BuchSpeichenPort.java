@@ -1,4 +1,4 @@
-package com.example.buchladen.adapter.db;
+package com.example.buchladen.domain.port.out;
 
 import com.example.buchladen.domain.model.Buch;
 import lombok.NonNull;

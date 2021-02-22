@@ -1,6 +1,6 @@
 package com.example.buchladen.adapter.web;
 
-import com.example.buchladen.adapter.db.BuchLadenPort;
+import com.example.buchladen.domain.port.out.BuchLadenPort;
 import com.example.buchladen.adapter.web.mapper.BuchMapper;
 import com.example.buchladen.adapter.web.model.Buch;
 import com.example.buchladen.adapter.web.model.SucheAlleBuecherResponse;
