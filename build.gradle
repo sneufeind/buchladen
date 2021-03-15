@@ -3,6 +3,7 @@ plugins {
 	id 'idea'
 }
 
+import org.gradle.internal.os.OperatingSystem
 subprojects {
 
 	apply plugin: 'java'
@@ -10,7 +11,7 @@ subprojects {
 	apply plugin: 'io.spring.dependency-management'
 
 	group = 'com.example.buchladen'
-	version = '0.0.1-SNAPSHOT'
+	version = "1.0.0-${OperatingSystem.current().isWindows() ? System.getenv('USERNAME') : System.getenv('HOME')}"
 
 	ext {
 		encoding = 'UTF-8'
