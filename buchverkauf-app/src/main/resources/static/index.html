@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BuchVerkauf</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/buchverkauf.js"></script>
+</head>
+<body onload="javascript:ladeBuecher()">
+
+    <div class="jumbotron">
+        <h1>BuchVerkauf</h1>
+        <p>Du bist auf der Suche nach einem neuen, spannenden Buch?
+            Dann bist Du hier genau richtig.
+            Wir haben die passenden Angebote für dich!
+        </p>
+<!--        <p><a class="btn btn-primary btn-lg" href="#" role="button">Mehr erfahren</a></p>-->
+    </div>
+
+    <div class="panel panel-info">
+        <!-- Standard-Panel-Inhalt -->
+        <div class="panel-heading">Aktuelle Angebote</div>
+        <div class="panel-body">
+
+        <ul class="list-group" id="buecher">
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h4>Buchname</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p>ISBN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>Preis &euro;</h4>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary btn-lg">
+                            <span class="glyphicon glyphicon-shopping-cart glyphicon glyphicon-" aria-hidden="true"></span> Kaufen
+                        </button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    </div>
+</body>
+</html>

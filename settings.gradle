@@ -1,1 +1,5 @@
 rootProject.name = 'buchladen'
+
+include 'buchladen-api'
+include 'buchladen-app'
+include 'buchverkauf-app'

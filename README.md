@@ -21,7 +21,36 @@ Aus diesem Grund entscheiden sich, die Consumer mit dem Provider einen `Contract
 Wir haben nun verstanden, _warum_ die Consumer ein Interesse haben, mit dem Provider einen Contract auszuhandeln. 
 Jetzt wollen wir uns darum kümmern, _was_ dafür getan werden muss.
 
-TODO
+### Aufgaben
+- [Aufgabe 0: Vorbereitung](#aufgabe-0-vorbereitung)
+- [Aufgabe 1: Pact-Broker](#aufgabe-1-pact-broker)
+- [Aufgabe 2: Consumer - Contract definieren](#aufgabe-2-consumer-contract-definieren-als-consumer)
+- [Aufgabe 3: Consumer - Contract auf Broker publizieren](#aufgabe-3-consumer-contract-auf-broker-publizieren)
+- [Aufgabe 4: Provider - Contract im Test berücksichtigen](#)
+- [Aufgabe 5: Provider - Contracts verifizieren](#)
+- [Aufgabe 6: Provider - Deployment in Stage](#)
+- [Aufgabe 7: Consumer - Can I deploy](#)
+
+  
+#### Aufgabe 0: Vorbereitung
+
+Für die nachfolgenden Übungen werden folgende Dinge benötigt:
+
+1. Ein _Java Development Kit_ (kurz JDK) in Version >=11
+2. Eine Entwicklungsumgebung für Java (bspw. IntelliJ, etc.)
+3. Da wir _Lombok_ einsetzen, sollte sichergestellt sein, dass das _Annotation Processing_ in der IDE aktiviert ist
+4. Eine _Docker_-Maschine (für den Pact-Broker) 
+5. Ein GitHub-Account anlegen - falls nicht schon
+5. Laden Sie sich dieses Repository (`buchladen`) von GitHub herunter
+6. Laden Sie sich das Repository (`buchverkauf`) von GitHub herunter
+7. Laden Sie sich das Repository (`buchempfelung`) von GitHub herunter
+
+
+#### Aufgabe 1: PACT-Broker aufsetzen
+
+_TODO_
+
+
 
 ## Consumer Übersicht
 Übersicht über alle Consumer, mit denen ein Contract vereinbart wurde
@@ -33,8 +62,8 @@ TODO
 
 
 ## Links
-| was | Link |
-| --- | --- |
-| Swagger-UI | http://localhost:8080/swagger-ui.html |
-| OpenAPI Spec (Anzeige) | http://localhost:8080/api-docs/ |
-| OpenAPI Spec als Download (`yml`) | http://localhost:8080/api-docs.yaml |
+| System | was | Link |
+| --- | --- | --- |
+| buchladen-app | Swagger-UI | http://localhost:8090/swagger-ui.html |
+| buchladen-app | OpenAPI Spec (Anzeige) | http://localhost:8090/api-docs/ |
+| buchladen-app | OpenAPI Spec als Download (`yml`) | http://localhost:8080/api-docs.yaml |

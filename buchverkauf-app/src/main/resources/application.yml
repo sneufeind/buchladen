@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+exmaple:
+  url:
+    buchladen: 'http://localhost:8090'

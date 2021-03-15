@@ -1,0 +1,12 @@
+dependencies {
+    implementation project(':buchladen-api')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+//    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.2'
+
+    // test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}

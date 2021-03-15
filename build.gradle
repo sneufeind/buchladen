@@ -1,49 +1,48 @@
-buildscript {
-	ext {
-		pactVersion = '4.1.17'
-	}
-}
 plugins {
-	id 'org.springframework.boot' version '2.4.3'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'au.com.dius.pact' version "$pactVersion"
-	id 'java'
 	id 'idea'
 }
-apply from: 'gradle/test-cdc.gradle'
 
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+subprojects {
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
+	apply plugin: 'java'
+	apply plugin: 'java-library'
+	apply plugin: 'io.spring.dependency-management'
+
+	group = 'com.example.buchladen'
+	version = '0.0.1-SNAPSHOT'
+
+	ext {
+		encoding = 'UTF-8'
+		javaVersion = JavaVersion.VERSION_11
+		pactVersion = '4.1.17'
+		springBootVersion = '2.4.3'
 	}
-}
 
-repositories {
-	mavenCentral()
-}
+	sourceCompatibility = ext.javaVersion
+	targetCompatibility = ext.javaVersion
+	compileJava.options.encoding = ext.encoding
+	compileTestJava.options.encoding = ext.encoding
 
-dependencies {
-	def springDocVersion= '1.5.4'
+	configurations {
+		compileOnly {
+			extendsFrom annotationProcessor
+		}
+	}
 
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation "org.springdoc:springdoc-openapi-data-rest:$springDocVersion"
-	implementation "org.springdoc:springdoc-openapi-ui:$springDocVersion"
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
+	repositories {
+		mavenCentral()
+		jcenter()
+	}
 
-	// test
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+	dependencies {
+		compileOnly 'org.projectlombok:lombok'
+		annotationProcessor 'org.projectlombok:lombok'
+	}
 
-	// test consumer driven contract
-	contractTestImplementation "au.com.dius.pact.provider:junit5:$pactVersion"
-	contractTestCompileOnly 'org.projectlombok:lombok'
-}
-
-test {
-	useJUnitPlatform()
+	dependencyManagement {
+		imports {
+			mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+		}
+	}
 }

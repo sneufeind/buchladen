@@ -1,0 +1,16 @@
+dependencies {
+    def springDocVersion= '1.5.4'
+
+    implementation project(':buchladen-api')
+    implementation "org.springdoc:springdoc-openapi-data-rest:$springDocVersion"
+    implementation "org.springdoc:springdoc-openapi-ui:$springDocVersion"
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+}
+
+test {
+    useJUnitPlatform()
+}
