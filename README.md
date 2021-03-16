@@ -60,6 +60,12 @@ _TODO_
 | buchladen-api | v1 | buchverkauf | buchladen-api-v1 | vertrieb | sales@example.com |
 | buchladen-api | v1 | buchempfehlung | buchladen-api-v1 | empfehlung | recommendation@example.com |
 
+## Befehle
+| System | was | Befehl |
+| --- | --- | --- |
+| Buchladen | `buchladen-app` starten | `gradlew -si :buchladen-app:bootRun` |
+| BuchVerkauf | `buchverkauf-app` starten | `gradlew -si :buchverkauf-app:bootRun` |
+| BuchEmpfehlung | `buchempfehlung-app` starten | `gradlew -si :buchempfehlung-app:bootRun` |
 
 ## Links
 | System | was | Link |
