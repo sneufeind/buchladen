@@ -44,7 +44,7 @@ public class Mapper {
             return null;
 
         final Buch buch = new Buch();
-        buch.setTitel(web.getTitle());
+        buch.setTitel(web.getTitel());
         buch.setAutor(autorToDomain(web.getAutor()));
         buch.setGenre(web.getGenre());
         buch.setRang(rang);

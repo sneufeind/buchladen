@@ -17,22 +17,22 @@ class MapperTest {
 
         final List<Buch> buecherVonApi = Arrays.asList(
                 Buch.builder()
-                        .title("Buch A")
+                        .titel("Buch A")
                         .isbn("1")
                         .verkaufteExemplare(4)
                         .build(),
                 Buch.builder()
-                        .title("Buch B")
+                        .titel("Buch B")
                         .isbn("2")
                         .verkaufteExemplare(2)
                         .build(),
                 Buch.builder()
-                        .title("Buch C")
+                        .titel("Buch C")
                         .isbn("3")
                         .verkaufteExemplare(7)
                         .build(),
                 Buch.builder()
-                        .title("Buch D")
+                        .titel("Buch D")
                         .isbn("4")
                         .verkaufteExemplare(4)
                         .build()

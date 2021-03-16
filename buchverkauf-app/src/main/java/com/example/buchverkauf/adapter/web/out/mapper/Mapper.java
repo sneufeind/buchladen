@@ -10,7 +10,7 @@ public final class Mapper {
 
         final Buch buch = new Buch();
         buch.setIsbn(web.getIsbn());
-        buch.setTitel(web.getTitle());
+        buch.setTitel(web.getTitel());
         buch.setPreisInEuro(web.getPreis() == null ? null : web.getPreis().getWert());
         return buch;
     }

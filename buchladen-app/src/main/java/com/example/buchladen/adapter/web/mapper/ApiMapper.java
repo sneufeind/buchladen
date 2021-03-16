@@ -12,7 +12,7 @@ public class ApiMapper {
                 .genre(buch.getGenre().name())
                 .isbn(buch.getIsbn().getCode())
                 .preis( mapPreisToWeb(buch.getPreis()) )
-                .title(buch.getTitel())
+                .titel(buch.getTitel())
                 .verkaufteExemplare(buch.getVerkaufteExemplare() == null ? 0 : buch.getVerkaufteExemplare())
                 .build();
     }

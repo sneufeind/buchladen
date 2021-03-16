@@ -3,7 +3,6 @@ package com.example.buchladen.adapter.web;
 import com.example.buchladen.Beispiel;
 import com.example.buchladen.adapter.db.BuchInMemoryAdapter;
 import com.example.buchladen.adapter.db.BuchVerkaufInMemoryAdapter;
-import com.example.buchladen.api.model.KaufeBuchRequest;
 import com.example.buchladen.api.model.SucheAlleBuecherResponse;
 import com.example.buchladen.domain.model.Buch;
 import org.junit.jupiter.api.BeforeEach;
@@ -51,7 +50,7 @@ class BuchWebEndpointTest {
         final com.example.buchladen.api.model.Buch buch = this.endpoint.findeBuchAnhand(erwartetesBuch.getIsbn().getCode());
         // then
         assertEquals(erwartetesBuch.getIsbn().getCode(), buch.getIsbn());
-        assertEquals(erwartetesBuch.getTitel(), buch.getTitle());
+        assertEquals(erwartetesBuch.getTitel(), buch.getTitel());
     }
 
     @Test
