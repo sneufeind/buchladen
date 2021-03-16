@@ -67,3 +67,5 @@ _TODO_
 | buchladen-app | Swagger-UI | http://localhost:8090/swagger-ui.html |
 | buchladen-app | OpenAPI Spec (Anzeige) | http://localhost:8090/api-docs/ |
 | buchladen-app | OpenAPI Spec als Download (`yml`) | http://localhost:8080/api-docs.yaml |
+| buchverkaufen-app | UI | http://localhost:8080 |
+| buchempfehlung-app | UI | http://localhost:8081 |

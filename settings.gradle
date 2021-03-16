@@ -1,5 +1,6 @@
 rootProject.name = 'buchladen'
 
+include 'buchempfehlung-app'
 include 'buchladen-api'
 include 'buchladen-app'
 include 'buchverkauf-app'

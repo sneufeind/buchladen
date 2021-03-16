@@ -10,4 +10,5 @@ public class Buch {
     private final Autor autor;
     private final Preis preis;
     private final Genre genre;
+    private Integer verkaufteExemplare;
 }

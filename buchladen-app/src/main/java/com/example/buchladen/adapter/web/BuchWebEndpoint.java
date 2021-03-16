@@ -1,6 +1,6 @@
 package com.example.buchladen.adapter.web;
 
-import com.example.buchladen.adapter.web.mapper.BuchMapper;
+import com.example.buchladen.adapter.web.mapper.ApiMapper;
 import com.example.buchladen.api.BuchladenApi;
 import com.example.buchladen.api.model.Buch;
 import com.example.buchladen.api.model.KaufeBuchRequest;
@@ -64,7 +64,8 @@ public class BuchWebEndpoint implements BuchladenApi {
     @ResponseStatus(HttpStatus.OK)
     public SucheAlleBuecherResponse sucheAlleBuecher(){
         final List<Buch> buecher = this.buchLadenPort.sucheAlleBuecher().stream()
-                .map(BuchMapper::mapToWeb)
+                .peek(buch -> buch.setVerkaufteExemplare( this.buchVerkaufenPort.anzahlVerkaufterExemplare(buch.getIsbn()) ))
+                .map(ApiMapper::mapToWeb)
                 .collect(Collectors.toList());
         return new SucheAlleBuecherResponse(buecher);
     }
@@ -94,7 +95,7 @@ public class BuchWebEndpoint implements BuchladenApi {
             @PathVariable("isbn") final String isbn
     ){
         return this.buchLadenPort.findeBuchAnhand(ISBN.withCode(isbn))
-                .map(BuchMapper::mapToWeb)
+                .map(ApiMapper::mapToWeb)
                 .orElseThrow(() -> new IllegalArgumentException("Unbekanntes Buch"));
     }
 

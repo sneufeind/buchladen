@@ -1,8 +1,8 @@
-package com.example.buchverkauf.adapter.web.in.mapper;
+package com.example.buchverkauf.adapter.web.out.mapper;
 
 import com.example.buchverkauf.domain.model.Buch;
 
-public class Mapper {
+public final class Mapper {
 
     public static Buch buchToDomain(final com.example.buchladen.api.model.Buch web){
         if(web == null)
@@ -14,8 +14,4 @@ public class Mapper {
         buch.setPreisInEuro(web.getPreis() == null ? null : web.getPreis().getWert());
         return buch;
     }
-
-    private String isbn;
-    private String titel;
-    private double preisInEuro;
 }

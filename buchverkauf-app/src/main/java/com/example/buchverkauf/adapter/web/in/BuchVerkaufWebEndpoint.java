@@ -1,7 +1,6 @@
 package com.example.buchverkauf.adapter.web.in;
 
 import com.example.buchverkauf.adapter.web.in.model.AlleBuecherResponse;
-import com.example.buchverkauf.domain.model.Buch;
 import com.example.buchverkauf.domain.port.BuchKaufenPort;
 import com.example.buchverkauf.domain.port.BuecherLadenPort;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -4,23 +4,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BuchVerkauf</title>
+    <meta http-equiv="refresh" content="1">
+    <title>BuchEmpfehlung</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="css/buchverkauf.css" rel="stylesheet">
+    <link href="css/buchempfehlung.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/buchverkauf.js"></script>
+    <script src="js/buchempfehlung.js"></script>
 </head>
 <body onload="javascript:ladeBuecher()">
     <div class="jumbotron">
-        <h2>Verkauf</h2>
-        <p>Du bist auf der Suche nach einem neuen, spannenden Buch? Dann bist Du hier genau richtig.</p>
-        <p>Wir haben die passenden Angebote für dich!</p><br>
-        <div id="empfehlungBtnContainer"><a class="btn btn-primary btn-lg" href="http://localhost:8081" role="button">Mehr erfahren</a></div>
+        <h2>Empfehlung</h2>
+        <p>Du bist auf der Suche nach einem neuen, spannenden Buch? Dann bist Du hier genau richtig</p>
+        <p>Wir haben genau das, was Du suchst!</p><br>
+        <div id="shopBtnContainer"><a class="btn btn-primary btn-lg" href="http://localhost:8080" role="button">Zum Shop</a></div>
     </div>
     <div class="panel panel-info">
-        <div class="panel-heading">Aktuelle Angebote</div>
+        <div class="panel-heading">Aktuelle Empfehlungen</div>
         <div class="panel-body">
             <ul class="list-group" id="buecher"></ul>
         </div>

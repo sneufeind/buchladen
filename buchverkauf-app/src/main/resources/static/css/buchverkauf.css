@@ -1,0 +1,12 @@
+.jumbotron {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.jumbotron p {
+    font-size: 16px;
+}
+
+#empfehlungBtnContainer {
+    text-align: center;
+}

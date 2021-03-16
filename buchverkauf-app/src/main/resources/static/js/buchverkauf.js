@@ -1,5 +1,3 @@
-var kaufenUrlTemplate = '/api/buecher/{isbn}/kaufen'
-
 function ladeBuecher() {
     console.debug("Lade Bücher...");
     $.get('/api/buecher', function(data, status){

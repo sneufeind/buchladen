@@ -13,5 +13,8 @@ public class Buch {
 
     private String title;
     private String isbn;
+    private Autor autor;
+    private String genre;
     private Preis preis;
+    private int verkaufteExemplare;
 }

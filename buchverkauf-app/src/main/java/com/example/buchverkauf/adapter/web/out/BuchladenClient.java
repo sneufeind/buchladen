@@ -1,8 +1,7 @@
 package com.example.buchverkauf.adapter.web.out;
 
-import com.example.buchladen.api.model.KaufeBuchRequest;
 import com.example.buchladen.api.model.SucheAlleBuecherResponse;
-import com.example.buchverkauf.adapter.web.in.mapper.Mapper;
+import com.example.buchverkauf.adapter.web.out.mapper.Mapper;
 import com.example.buchverkauf.domain.model.Buch;
 import com.example.buchverkauf.domain.port.BuchKaufenPort;
 import com.example.buchverkauf.domain.port.BuecherLadenPort;
@@ -38,7 +37,6 @@ public class BuchladenClient implements BuchKaufenPort, BuecherLadenPort {
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .build();
     }
-
 
     @Override
     public void kaufeBuchMit(@NonNull final String isbn) {
