@@ -23,7 +23,6 @@ subprojects {
 	ext {
 		encoding = 'UTF-8'
 		javaVersion = JavaVersion.VERSION_11
-		pactVersion = '4.1.17'
 	}
 
 	sourceCompatibility = ext.javaVersion
