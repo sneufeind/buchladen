@@ -2,24 +2,36 @@
 
 
 ## Übersicht
+
 In unserem Beispiel gibt es den Online-Buchladen (`buchladen`), über den die Autoren ihre Bücher einstellen können.
 
 ![gesamt](docs/gesamt.png "Gesamtübersicht")
 
 Daneben gibt es zwei Systeme, die die API des `buchladen` nutzen wollen - nämlich zum einen die Empfehlung `buchempfehlung` und den Buchverkauf `buchverkauf`.
-Beide Systeme haben unterschiedliche Sichten und Verständnisse darüber, welche ein Buch haben sollte.
+Beide Systeme haben unterschiedliche Sichten und Verständnisse darüber, welche Eigenschaften ein Buch haben sollte.
 
-Die Consumer haben zwei wesentliche Erwartung an die API des Buchladens:
-1. sicherstellen, dass die Schnittstelle des Providers die jeweils notwendigen Felder liefert 
+Das System `buchverkauf` bietet eine Möglichkeit, Bücher über eine UI zu kaufen. 
+
+![Buch-Verkauf](docs/buchverkauf_ui.png)
+
+Als nächstes kommt ein weiterer Konsument `buchempfehlung` hinzu, mit dem Interessenten sich über aktuelle Bestseller informieren kann.
+
+![Buch-Empfehlung](docs/buchempfehlung_ui.png)
+
+
+Die Konsumenten haben zwei wesentliche Erwartung an die API des Buchladens:
+
+1. Sicherstellen, dass die Schnittstelle des Providers die jeweils notwendigen Felder liefert 
 2. Im Falle von Releases neuer Versionen des Providers darf die Schnittstelle zum Consumer nicht brechen 
 
-Aus diesem Grund entscheiden sich, die Consumer mit dem Provider einen `Contract` einzugehen. 
+Aus diesem Grund entscheiden sich, die Consumer mit dem Provider einen `Contract` im Sinne des `Consumer Driven Contract Testing` einzugehen. 
 
 
 ## Consumer Driven Contract Testing
 
 Wir haben nun verstanden, _warum_ die Consumer ein Interesse haben, mit dem Provider einen Contract auszuhandeln. 
 Jetzt wollen wir uns darum kümmern, _was_ dafür getan werden muss.
+
 
 ### Aufgaben
 - [Aufgabe 0: Vorbereitung](#aufgabe-0-vorbereitung)
