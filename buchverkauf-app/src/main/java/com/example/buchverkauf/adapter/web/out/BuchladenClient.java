@@ -27,7 +27,7 @@ public class BuchladenClient implements BuchKaufenPort, BuecherLadenPort {
     private final RestTemplate httpClient;
 
     @Autowired
-    BuchladenClient(
+    public BuchladenClient(
         @Value("${exmaple.url.buchladen}") final String buchladenUrl,
         final RestTemplateBuilder restTemplateBuilder
     ){
