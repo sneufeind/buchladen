@@ -1,11 +1,13 @@
 buildscript {
 	ext {
 		springBootVersion = '2.4.3'
+		pactVersion = '4.1.17'
 	}
 }
 plugins {
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'org.springframework.boot' version "$springBootVersion"
+	id 'au.com.dius.pact' version "$pactVersion"
 	id 'idea'
 }
 
@@ -16,6 +18,9 @@ subprojects {
 	apply plugin: 'java-library'
 	apply plugin: 'io.spring.dependency-management'
 	apply plugin: 'org.springframework.boot'
+	apply plugin: 'au.com.dius.pact'
+	apply plugin: 'idea'
+	apply from: "${project.rootDir}/gradle/test-cdc.gradle"
 
 	group = 'com.example.buchladen'
 	version = "1.0.0-${OperatingSystem.current().isWindows() ? System.getenv('USERNAME') : System.getenv('HOME')}"
