@@ -9,6 +9,10 @@ dependencies {
     // test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+
+    // cdct
+    contractTestImplementation "au.com.dius.pact.provider:junit5:${pactVersion}"
+    contractTestImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 bootRun {
@@ -18,5 +22,19 @@ bootRun {
 }
 
 test {
+    useJUnitPlatform()
+}
+
+task contractTest(type: Test) {
+    group 'verification'
+    description = 'Run consumer driven contract tests'
+
+    systemProperties System.properties
+    systemProperty 'pact.rootDir', "${project.rootDir}/pacts"
+    systemProperty 'pact.verifier.publishResults', System.getProperty('pact.verifier.publishResults', 'false')
+
+    testClassesDirs = sourceSets.contractTest.output.classesDirs
+    classpath =       sourceSets.contractTest.runtimeClasspath
+
     useJUnitPlatform()
 }
