@@ -81,9 +81,6 @@ Für die nachfolgenden Übungen werden folgende Dinge benötigt:
 4. Da wir _Lombok_ einsetzen, sollte sichergestellt sein, dass das _Annotation Processing_ in der IDE aktiviert ist
 5. Eine _Docker_-Maschine (für den Pact-Broker)
 
-
-### Aufgabe 1: Consumer - Contract definieren
-
 Wir wollen als Tooling `Pact` einsetzen. Hierzu müssen wir als erstes das Pact-Gradle-Plugin in unser Projekt aufnehmen.
 Da das Gradle-Plugin sowohl auf der Consumer- als auch auf der Provider-Seite erforderlich ist, werden wir es im Root-Projekt konfigurieren.
 
@@ -105,7 +102,7 @@ _TODOs_
 ## Nützliche Befehle
 | System | was | Befehl |
 | --- | --- | --- |
-| Buchladen | `buchladen-app` starten | `gradlew -si :buchladen-app:bootRun` |
+| Buchladen | `buchladen-app` starten | `gradlew -si -Pargs=--init :buchladen-app:bootRun` |
 | BuchVerkauf | `buchverkauf-app` starten | `gradlew -si :buchverkauf-app:bootRun` |
 | BuchEmpfehlung | `buchempfehlung-app` starten | `gradlew -si :buchempfehlung-app:bootRun` |
 
