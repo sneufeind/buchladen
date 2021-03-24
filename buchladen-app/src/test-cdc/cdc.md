@@ -5,3 +5,4 @@
 | Provider-ID | Client-ID | relevantes Tag | Ansprechpartner | Kontaktdaten |
 | --- | --- |  --- |  --- |  --- | 
 | buchladen | buchverkauf | `ready` | Max Mustermann | max.mustermann@example.com |
+| buchladen | buchempfehlung | `live` | Maya Musterfrau | maya.musterfrau@example.com |
