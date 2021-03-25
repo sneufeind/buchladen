@@ -15,6 +15,13 @@ test {
     useJUnitPlatform()
 }
 
+pact {
+    publish {
+        pactBrokerUrl = '<pact-broker-url>'
+        tags = [ version.toString(), 'live' ]
+    }
+}
+
 task contractTest(type: Test) {
     group 'verification'
     description = 'Run consumer driven contract tests'
