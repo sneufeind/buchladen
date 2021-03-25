@@ -5,7 +5,8 @@ import au.com.dius.pact.provider.junit5.PactVerificationContext;
 import au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider;
 import au.com.dius.pact.provider.junitsupport.IgnoreNoPactsToVerify;
 import au.com.dius.pact.provider.junitsupport.Provider;
-import au.com.dius.pact.provider.junitsupport.loader.PactFolder;
+import au.com.dius.pact.provider.junitsupport.loader.PactBroker;
+import au.com.dius.pact.provider.junitsupport.loader.VersionSelector;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,7 +15,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.server.LocalServerPort;
 
 @Provider("buchladen")
-@PactFolder("../pacts")
+@PactBroker(scheme = "http", host="localhost", port="8421",
+        consumerVersionSelectors = {
+            @VersionSelector(tag = "live"),
+            @VersionSelector(tag = "ready")
+        }
+)
 @IgnoreNoPactsToVerify
 public abstract class AbstractPactVerifier {
 

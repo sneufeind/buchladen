@@ -25,13 +25,21 @@ test {
     useJUnitPlatform()
 }
 
+pact {
+    broker {
+        pactBrokerUrl = 'http://localhost:8421'
+    }
+}
+
 task contractTest(type: Test) {
     group 'verification'
     description = 'Run consumer driven contract tests'
 
     systemProperties System.properties
-    systemProperty 'pact.rootDir', "${project.rootDir}/pacts"
+//    systemProperty 'pact.rootDir', "${project.rootDir}/pacts"
     systemProperty 'pact.verifier.publishResults', System.getProperty('pact.verifier.publishResults', 'false')
+    systemProperty 'pact.provider.tag', System.getProperty('pact.provider.tag', 'local-check')
+    systemProperty 'pact.provider.version', version.toString()
 
     testClassesDirs = sourceSets.contractTest.output.classesDirs
     classpath =       sourceSets.contractTest.runtimeClasspath
