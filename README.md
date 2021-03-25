@@ -25,7 +25,7 @@ Beide Systeme `buchverkauft` und `buchempfehlung` haben unterschiedliche Sichten
 ![gesamt](docs/gesamt.png "Gesamtübersicht")
 
 
-Zu Beginn ist alles klar und stabil. Doch was passiert, wenn im weiteren Verlauf zu Änderungen an der Schnittstelle kommt? Wie lässt sich sicherstellen, dass davon der `buchverkauf` nicht betroffen ist und weiterhin funktionsfähig bleibt, ohne dass hier ein ständiger Austausch mit dem Provider-Team erforderlich ist.
+Zu Beginn ist alles klar und stabil. Doch was passiert, wenn es im weiteren Verlauf zu Änderungen an der Schnittstelle kommt? Wie lässt sich sicherstellen, dass davon der `buchverkauf` nicht betroffen ist und weiterhin funktionsfähig bleibt, ohne dass hier ein ständiger Austausch mit dem Provider-Team erforderlich ist.
 
 Eine mögliche Lösung ist `Consumer Driven Contract Testing`.
 
@@ -35,7 +35,7 @@ Eine mögliche Lösung ist `Consumer Driven Contract Testing`.
 
 ### Motivation
 
-Die Konsumenten haben zwei wesentliche Erwartung an die API des Buchladens:
+Die Konsumenten haben zwei wesentliche Erwartungen an die API des Buchladens:
 
 1. Sicherstellen, dass die Schnittstelle des Providers die jeweils notwendigen Felder liefert
 2. Im Falle von Releases neuer Versionen des Providers darf die Schnittstelle zum Consumer nicht brechen
@@ -58,15 +58,15 @@ Jetzt wollen wir uns darum kümmern, _was_ dafür getan werden muss.
 ## Aufgaben
 
 - [Aufgabe 0: Vorbereitung](#aufgabe-0-vorbereitung)
-- [Aufgabe 1: Consumer - Contract definieren und erzeugen](#aufgabe-1-consumer-contract-definieren-und-erzeugen)
-- [Aufgabe 2: Provider - Contract berücksichtigen und verifizieren](#aufgabe-2-provider-contract-berücksichtigen-und-verifizieren)
-- [Aufgabe 3: Weiterer Consumer - Contract definieren und erzeugen](#aufgabe-3-weiterer-consumer-contract-definieren-und-erzeugen)
-- [Aufgabe 4: Provider - Contract von weiterem Consumer berücksichtigen und verifizieren](#aufgabe-4-provider-contract-von-weiterem-consumer-berücksichtigen-und-verifizieren)
+- [Aufgabe 1: Consumer - Contract definieren und erzeugen](#aufgabe-1-consumer---contract-definieren-und-erzeugen)
+- [Aufgabe 2: Provider - Contract berücksichtigen und verifizieren](#aufgabe-2-provider---contract-berücksichtigen-und-verifizieren)
+- [Aufgabe 3: Weiterer Consumer - Contract definieren und erzeugen](#aufgabe-3-weiterer-consumer---contract-definieren-und-erzeugen)
+- [Aufgabe 4: Provider - Contract von weiterem Consumer berücksichtigen und verifizieren](#aufgabe-4-provider---contract-von-weiterem-consumer-berücksichtigen-und-verifizieren)
 - [Aufgabe 5: Pact-Broker aufsetzen](#aufgabe-5-pact-broker-aufsetzen)
-- [Aufgabe 6: Consumer - Contract auf Broker publizieren](#aufgabe-6-consumer-contract-auf-broker-publizieren)
-- [Aufgabe 7: Provider - Contracts verifizieren](#aufgabe-7-provider-contracts-verifizieren)
-- [Aufgabe 8: Provider - Deployment in Stage](#aufgabe-8-provider-deployment-in-stage)
-- [Aufgabe 9: Consumer - Can I deploy](#aufgabe-9-consumer-can-i-deploy)
+- [Aufgabe 6: Consumer - Contract auf Broker publizieren](#aufgabe-6-consumer---contract-auf-broker-publizieren)
+- [Aufgabe 7: Provider - Contracts verifizieren](#aufgabe-7-provider---contracts-verifizieren)
+- [Aufgabe 8: Provider - Deployment in Stage](#aufgabe-8-provider---deployment-in-stage)
+- [Aufgabe 9: Consumer - Can I deploy](#aufgabe-9-consumer---can-i-deploy)
 
 
 
